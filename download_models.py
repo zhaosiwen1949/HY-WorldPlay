@@ -39,7 +39,10 @@ def download_hy_worldplay():
     print("[1/6] Downloading tencent/HY-WorldPlay...")
     print("=" * 60)
 
-    worldplay_path = snapshot_download("tencent/HY-WorldPlay")
+    worldplay_path = snapshot_download(
+        "tencent/HY-WorldPlay",
+        allow_patterns=["ar_model/*"]
+        )
     print(f"Downloaded to: {worldplay_path}")
 
     # Fix: Rename model.safetensors to diffusion_pytorch_model.safetensors
